@@ -1,0 +1,62 @@
+html{
+	scroll-behavior: smooth;;
+}
+body{
+	background-color:white;
+}
+.about h4{
+	font-family:'Berlin Sans FB';
+	font-weight: normal;
+	font-size: 25px;
+	margin-top:15px;
+}
+.about p{
+	font-family: 'Times New Roman', Times, serif;
+	font-size:30px;
+}
+.w3ls-tittle{
+	font-family: 'Niconne', cursive;
+	text-align:center;
+	font-size:52px;
+	color:#ff322e;
+	margin-bottom: 50px;
+}
+#filler{
+  /*  background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.7));*/
+    background-image: url(../img/overlay5.jpg);
+    background-repeat: repeat;
+    background-attachment: scroll;
+    background-size: cover;
+	min-height: 70vh;
+	margin-top:20px;
+	color:white;
+	font-family: 'Times New Roman', Times, serif;
+	font-size: 17px;
+
+}
+
+#map iframe{
+	outline:none;
+	border:none;
+	width: 100%;
+	height:350px;
+	margin:5px;
+}
+#book{
+	
+	min-height:60vh;
+	margin-top:100px;
+}
+
+#footer{
+	background: maroon;
+	color: white;
+	margin-top:15px;
+}
+#feedback{
+	min-height: 30vh;
+}
+/* codes for portfolio*/
+#portfolio{
+	min-height:80vh;
+}

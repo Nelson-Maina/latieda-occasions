@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,6 +15,9 @@
 <!-- //Custom Theme files -->
 <!--Main css--->
 <link href="css/main.css" rel="stylesheet">
+<!--bootstrap css-->
+<link rel="stylesheet" href="css/bootstrap.min.css">
+
 
 <!-- js -->
 <script src="js/jquery-2.2.3.min.js"></script>
@@ -25,8 +29,9 @@
 <!--font awesome-->
 <script src="./js/all.js"></script>
 </head>
-<body>
 
+<body>
+<section>
     <!-- header -->
     <div class="header">
         <div class="container">
@@ -41,12 +46,13 @@
                     <li><a class="scroll" href="#contact">Contact</a></li>
                 </ul>
             </div>
-            <div class="clearfix"></div>
         </div>
     </div>
     <!-- //header -->
+    </section>
+
     <!-- navigation -->
-    <section class="top">
+    <section>
         <div class="navigation">
             <div class="container">
                 <!-- <div class="agileits-logo">
@@ -81,7 +87,6 @@
                                 <li><a href="#" class="f4"></a></li>
                             </ul>
                         </div>
-                        <div class="clearfix"></div>
                     </div><!-- /.navbar-collapse -->
                 </nav>
             </div>
@@ -89,14 +94,64 @@
         <!-- //navigation -->
     </section>
     <!--latest project-->
-
-    <section id="portfolio">
-     <div class="container-fluid">
-         <div class="col-md-7">
-             
-         </div>        
-     </div>
-    </section>
+<section class="mt-5">
+    <div class="row">
+        <div class="col">
+            <h1 class="text-center text-primary text-lead">Latest Projects</h1>
     
+        </div>
+</section>
+    <section id="portfolio">
+        <div class="container-fluid">
+                <!--cards sections-->
+                    <div class="col-md-6">
+                        <div class="card mb-3">
+                            <img src="/img/car deco.jpg" class="card-img-top" alt="..."height="600" width="600">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+                                    This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+
+                        <div class="card">
+                            <img src="/img/car deco2.jpg" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">Card title</h5>
+                                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional
+                                    content.
+                                    This content is a little bit longer.</p>
+                                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                <div class="col-md-6">
+                    <div class="card">
+                    <img src="/img/car deco2.jpg" class="card-img-top" alt="..." height="600" width="600">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+                                This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                     <br>
+                    <div class="card">
+                        <img src="/img/car deco2.jpg" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">Card title</h5>
+                            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content.
+                                This content is a little bit longer.</p>
+                            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                        </div>
+                    </div>
+                  </div>
+            </div>
+    </section>
+
 </body>
+
 </html>

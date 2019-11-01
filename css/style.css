@@ -405,6 +405,17 @@ li > a:only-child:after {
     min-height: 50em;
 }
 
+.main-content-adm {
+    background: url(../images/banner2.jpg) center no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    background-size: cover;
+    position: relative;
+    max-height: 100vh;
+}
+
 .layer {
     min-height: 50em;
     background: rgba(0, 0, 0, 0.42);

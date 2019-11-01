@@ -70,8 +70,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <input type="checkbox" id="drop-2" />
                             <ul class="inner-ul">
                                 <li><a href="index.html">Gallery</a></li>
-                                <li><a href="index.html">Past Events</a></li>
-                                <li><a href="index.html">Setting</a></li>
+                                <li><a href="index.html">Settings</a></li>
+                                <li><a href="includes/logout.php">Logout </a></li>
                             </ul>
                         </li>
                         <li><a href="index.html">Contact</a></li>

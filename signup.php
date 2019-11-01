@@ -1,5 +1,5 @@
 <?php //redirects the user to the home page if the session is active
-// require 'includes/init.php';
+require 'includes/init.php';
 if (isset($_SESSION['user_id'])) {
     redirect("../index.php");
 }

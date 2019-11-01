@@ -3,7 +3,7 @@
 //GOOGLW RECAPTCHA SECURITY
 define('SITE_KEY', '');
 define('SECRET_KEY', '');
-// require 'includes/init.php';
+require 'includes/init.php';
 // $sess = new SESSION();
 //redirects the user to the home page if the session is active
 if (isset($_SESSION['user_id'])) {

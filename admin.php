@@ -111,6 +111,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="row">
                 <!-- Event Requests -->
                 <div class="col-12">
+                    <?php
+                    require 'includes\functions.php';
+
+                    $events = getPastEvent();
+                 
+                ?>
+
                     <h6 class="text-center ">Resent Requests</h6>
                 </div>
                 <div class="col-12 " style="overflow: scroll;">
@@ -130,6 +137,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </tr>
                         </thead>
                         <tbody>
+
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>
@@ -156,28 +164,39 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-12 " style="overflow: scroll;">
                     <table class="table table-sm table-striped table-bordered">
                         <thead>
+
                             <tr>
                                 <th scope="col" style="width: 10px;">No</th>
                                 <th scope="col">Title</th>
                                 <th scope="col">Description</th>
-                                <th scope="col">Image</th>
+
                                 <th scope="col" style="width: 1%;">View</th>
                                 <th scope="col" style="width: 1%;">Delete</th>
 
                             </tr>
                         </thead>
                         <tbody>
+                            <?php  $events = getPastEvent();?>
+                            <?php
+                            $i = 0;
+                            foreach ($events as $event):
+                            $i++;
+                             ?>
+
                             <tr>
-                                <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
+                                <th scope="row"><?php  echo $i?>
+                                </th>
+                                <td><?php  echo $event['past_event_title']; ?>
+                                </td>
+                                <td><?php  echo $event['past_event_desc']; ?>
+                                </td>
 
                                 <td><button class="btn btn-success btn-sm">View</button></td>
                                 <td><button class="btn btn-danger btn-sm">Delete</button></td>
 
 
                             </tr>
+                            <?php endforeach;  ?>
 
                     </table>
                 </div>
@@ -360,7 +379,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </footer>
     <!-- //footer -->
 
-    <!--member new post Modal -->
+    <!--new past event modal -->
     <div class="modal fade" id="RegNewMemberModal" tabindex="-1" role="dialog" aria-labelledby="RegNewMemberModal"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-scrollable" role="document">
@@ -376,11 +395,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
                 <div class="modal-body py-0 px-1">
                     <!-- //form to create a new post -->
-                    <form id="usernewpost" action="includes/article.inc.php" enctype="multipart/form-data"
-                        method="post">
+                    <form id="usernewpost" action="includes/event.php" enctype="multipart/form-data" method="post">
 
                         <div class="form-group ">
-
                             <input type="text" class="form-control form-control-sm" id="lastName"
                                 aria-describedby="emailHelp" placeholder="Enter Event Title" name="post-title" required>
 
@@ -407,6 +424,83 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             </div>
         </div>
     </div>
+
+    <!--member edit post Modal -->
+
+    <div class="modal fade" id="editpost" tabindex="-1" role="dialog" aria-labelledby="RegNewMemberModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-1 " style="background-color:  #f6dffa;">
+                    <h5 class="modal-title text-center" id="exampleModalScrollableTitle">Edit Post</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- //require the ck editor -->
+                <script src="ckeditor/ckeditor.js"></script>
+                <?php  if (isset($_GET['id'])): ?>
+                <?php
+                    $urlID= $_GET['id'];
+
+                    $artOBJ = new  ARTICLE();
+                    $articleData = $artOBJ->getArtSpecific($urlID);
+  
+            ?>
+
+                <div class="modal-body py-0 px-1">
+                    <img src="includes/images/<?php echo $articleData[0]['articleimg']  ?>"
+                        class="img-fluid img-thumbnail" alt="">
+                    <!-- //form to create a new post -->
+                    <form id="userEditpost" action="includes/article.inc.php" enctype="multipart/form-data"
+                        method="post">
+                        <div class="form-group mb-1">
+
+                            <select id="inputState" name="category" class="form-control form-control-sm" required>
+                                <option selected="selected"><?php echo $articleData[0]['category_fk_category_name']  ?>
+                                </option>
+                                <?php foreach ($categories as $category):?>
+                                <option><?php echo $category['category_name'] ?>
+                                </option>
+                                <?php endforeach?>
+
+                            </select>
+                        </div>
+                        <input type="hidden" name="artid"
+                            value=" <?php echo $articleData[0]['article_id']  ?>">
+                        <div class="form-group mb-1 ">
+
+                            <input type="text" class="form-control form-control-sm" id="lastName"
+                                value="<?php echo $articleData[0]['article_tittle']  ?>"
+                                aria-describedby="emailHelp" placeholder="Enter Article Title" name="post-title"
+                                required>
+
+                        </div>
+
+                        <div class="form-group mb-0">
+                            <label for="exampleFormControlFile1">Upload New Image Here</label>
+                            <input type="file" class="form-control-file form-control-sm" name="image"
+                                id="exampleFormControlFile1">
+                        </div>
+
+
+                        <textarea name="content2"
+                            placeholder="Enter Article Content"><?php echo $articleData[0]['article_text']  ?></textarea>
+                        <script>
+                            CKEDITOR.replace('content2');
+                        </script>
+                    </form>
+                    <?php endif ?>
+                </div>
+                <div class="modal-footer p-1" style="background-color:  #f6dffa;">
+                    <butlton type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
+                        <button type="submit" class="btn btn-success" form="userEditpost"
+                            name="update_article">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
         integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">

@@ -191,8 +191,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <td><?php  echo $event['past_event_desc']; ?>
                                 </td>
 
-                                <td><button class="btn btn-success btn-sm">View</button></td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                <td> <a
+                                        href="admin.php?id=<?php  echo $event['past_event_id']; ?>"><button
+                                            class="btn btn-success btn-sm">View</button data-toggle="editpost"
+                                            onclick="reply_click(this.id)" data-target=".bd-example-modal-sm"></td>
+                                <td><button class="btn btn-danger btn-sm">Delete</button></a> </td>
 
 
                             </tr>
@@ -425,7 +428,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         </div>
     </div>
 
-    <!--member edit post Modal -->
+    <!--amin verify  post Modal -->
 
     <div class="modal fade" id="editpost" tabindex="-1" role="dialog" aria-labelledby="RegNewMemberModal"
         aria-hidden="true">
@@ -443,59 +446,41 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <?php
                     $urlID= $_GET['id'];
 
-                    $artOBJ = new  ARTICLE();
-                    $articleData = $artOBJ->getArtSpecific($urlID);
-  
+                    $eventData = getUpcomingEvents1($urlID);
+
+                   
             ?>
 
                 <div class="modal-body py-0 px-1">
-                    <img src="includes/images/<?php echo $articleData[0]['articleimg']  ?>"
+                    <img src="images/pasteventimages/<?php echo $eventData [0]['img_name']; ?>"
                         class="img-fluid img-thumbnail" alt="">
                     <!-- //form to create a new post -->
                     <form id="userEditpost" action="includes/article.inc.php" enctype="multipart/form-data"
                         method="post">
-                        <div class="form-group mb-1">
-
-                            <select id="inputState" name="category" class="form-control form-control-sm" required>
-                                <option selected="selected"><?php echo $articleData[0]['category_fk_category_name']  ?>
-                                </option>
-                                <?php foreach ($categories as $category):?>
-                                <option><?php echo $category['category_name'] ?>
-                                </option>
-                                <?php endforeach?>
-
-                            </select>
+                       
+                        <div class="col">
+                            <span class="font-weight-bolder d-inline">TITLE: </span><?php echo $eventData[0]['past_event_title']; ?>
                         </div>
+
+
                         <input type="hidden" name="artid"
-                            value=" <?php echo $articleData[0]['article_id']  ?>">
-                        <div class="form-group mb-1 ">
+                            value=" <?php echo $eventData [0]['past_event_id']; ?>">
 
-                            <input type="text" class="form-control form-control-sm" id="lastName"
-                                value="<?php echo $articleData[0]['article_tittle']  ?>"
-                                aria-describedby="emailHelp" placeholder="Enter Article Title" name="post-title"
-                                required>
-
-                        </div>
-
-                        <div class="form-group mb-0">
-                            <label for="exampleFormControlFile1">Upload New Image Here</label>
-                            <input type="file" class="form-control-file form-control-sm" name="image"
-                                id="exampleFormControlFile1">
+                        <!-- //id if the person who posted the article -->
+                        
+                        <div class="col card mb-2">
+                        <?php echo $eventData [0]['past_event_desc']; ?>
                         </div>
 
 
-                        <textarea name="content2"
-                            placeholder="Enter Article Content"><?php echo $articleData[0]['article_text']  ?></textarea>
-                        <script>
-                            CKEDITOR.replace('content2');
-                        </script>
                     </form>
                     <?php endif ?>
                 </div>
                 <div class="modal-footer p-1" style="background-color:  #f6dffa;">
-                    <butlton type="button" class="btn btn-secondary" data-dismiss="modal">Cancle</button>
-                        <button type="submit" class="btn btn-success" form="userEditpost"
-                            name="update_article">Update</button>
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <!-- <button type="submit" class="btn btn-danger btn-sm" form="userEditpost"
+                        name="reject_article">Reject</button> -->
+
                 </div>
             </div>
         </div>
@@ -511,6 +496,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <?php
+/*this  code will pop up the modal immediately the page
+ loads incase there is a new message in the form*/
+if (isset($_GET['id'])) {
+    echo '<script>
+        $("#editpost").modal();
+    
+    </script>';
+}
+?>
 
 
 </body>

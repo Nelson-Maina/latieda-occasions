@@ -15,7 +15,8 @@ function compress($source, $destination, $quality)
     return $destination;
 };
 
-function getPastEvent() {
+function getPastEvent()
+{
     $sql = "SELECT past_event_id,past_event_title,past_event_desc,img_name  from past_events 
     inner join images 
     on past_events_past_event_id = past_event_id;";
@@ -27,7 +28,13 @@ function getPastEvent() {
     return $data;
 }
 
-function getUpcomingEvents1(){
+function getUpcomingEvents1($id)
+{
+    $sql = "SELECT past_event_id,past_event_title,past_event_desc,img_name  from past_events 
+    inner join images 
+    on past_events_past_event_id = past_event_id WHERE past_event_id = $id;";
+    $obj = new DATABASE();
+    $data = $obj->queryNone($sql);
     
+    return $data;
 }
-

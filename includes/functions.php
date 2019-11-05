@@ -38,3 +38,15 @@ function getUpcomingEvents1($id)
     
     return $data;
 }
+
+ function queryInsert($sql)
+{
+    $obj = new DATABASE();
+
+    $stmt = $obj->conn()->prepare($sql);
+    if ($stmt->execute()) {
+        return true;
+    } else {
+        return false;
+    }
+}

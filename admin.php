@@ -171,7 +171,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <th scope="col">Description</th>
 
                                 <th scope="col" style="width: 1%;">View</th>
-                                <th scope="col" style="width: 1%;">Delete</th>
+
 
                             </tr>
                         </thead>
@@ -195,7 +195,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                         href="admin.php?id=<?php  echo $event['past_event_id']; ?>"><button
                                             class="btn btn-success btn-sm">View</button data-toggle="editpost"
                                             onclick="reply_click(this.id)" data-target=".bd-example-modal-sm"></td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></a> </td>
+
 
 
                             </tr>
@@ -445,7 +445,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <?php  if (isset($_GET['id'])): ?>
                 <?php
                     $urlID= $_GET['id'];
-
                     $eventData = getUpcomingEvents1($urlID);
 
                    
@@ -455,21 +454,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     <img src="images/pasteventimages/<?php echo $eventData [0]['img_name']; ?>"
                         class="img-fluid img-thumbnail" alt="">
                     <!-- //form to create a new post -->
-                    <form id="userEditpost" action="includes/article.inc.php" enctype="multipart/form-data"
-                        method="post">
-                       
+              
+
                         <div class="col">
                             <span class="font-weight-bolder d-inline">TITLE: </span><?php echo $eventData[0]['past_event_title']; ?>
                         </div>
-
-
-                        <input type="hidden" name="artid"
-                            value=" <?php echo $eventData [0]['past_event_id']; ?>">
-
+                       
                         <!-- //id if the person who posted the article -->
-                        
+
                         <div class="col card mb-2">
-                        <?php echo $eventData [0]['past_event_desc']; ?>
+                            <?php echo $eventData[0]['past_event_desc']; ?>
                         </div>
 
 
@@ -478,9 +472,32 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="modal-footer p-1" style="background-color:  #f6dffa;">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                    <!-- <button type="submit" class="btn btn-danger btn-sm" form="userEditpost"
-                        name="reject_article">Reject</button> -->
+                    <a href="includes/delete.inc.php?event=<?php echo $eventData[0]['past_event_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
+      
+                   
 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confirm Deletion Modal -->
+    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+            <div class="modal-content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col p-2">
+                            <h6 class="text-white text-center py-2 rounded" style="background: red"><span><i
+                                        class="fas fa-exclamation-triangle"></i></span> WARNING</h6>
+
+                            <p>Are you sure you want to permanently delete this Event?</p>
+
+                            <button type="button" data-dismiss="modal" class="btn btn-secondary  btn-sm">NO</button>
+                            <a id="demo" class="btn btn-danger btn-sm" href="">YES </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -496,6 +513,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
     </script>
+    <script>
+        function reply_click(clicked_id) {
+            x = clicked_id;
+            document.getElementById("demo").href = "includes/delete.inc.php?event=" + x;
+
+        }
+    </script>
+
     <?php
 /*this  code will pop up the modal immediately the page
  loads incase there is a new message in the form*/

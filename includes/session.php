@@ -43,6 +43,8 @@ class SESSION extends DATABASE
         } 
     }
 
+    // ?dgkasd
+
     //check type of admin and return true if super and false ir normal
     public function admintypeSuper($id){
         $result = $this->isAdmin($id);

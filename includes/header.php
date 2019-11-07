@@ -13,7 +13,7 @@
                     <ul class="menu mt-2 ml-auto">
                         <li class="active"><a href="index.html">Home</a></li>
                         <li><a href="#about" class="scroll">About</a></li>
-                        <li><a href="#blog" class="scroll">Portfolio</a></li>
+                        <li><a href="portfolio.php" class="scroll">Portfolio</a></li>
                         <li><a href="#blog" class="scroll">Blog</a></li>
                         <li><a href="#contact" class="scroll">Contact</a></li>
                     </ul>

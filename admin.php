@@ -2,7 +2,7 @@
 require 'includes/init.php';
 
 if ($_SESSION['user_type'] !== "admin") {
-    redirect("index.html");
+    redirect("index.php");
 }
 ?>
 

@@ -20,6 +20,8 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- main.css -->
     <link rel="stylesheet" href="css/login.css">
+
+    <link rel="stylesheet" href="css/format.css">
     <style>
         .logform {
             margin-top: 10%;
@@ -36,7 +38,7 @@ if (isset($_SESSION['user_id'])) {
 
                 <div class="img-div">
 
-                    <h4 class=" text-center">Register Here</h4>
+                    <h4 class=" text-center fontt-weight-bold">Register Here</h4>
                     <?php
                     if (isset($_GET['false'])) {
                         echo '<p class =" text-white text-center" style=" background-color: red;border-radius:5px"> Email Already Registered !!</p>';
@@ -59,7 +61,7 @@ if (isset($_SESSION['user_id'])) {
                     </div>
                     <div class="col">
                         <div class="form-group ">
-                            <label for="lastName">Last Name</label>
+                            <label for="lastName" class="font-weight-bolder">Last Name</label>
                             <input type="text" class="form-control form-control-sm" id="lastName"
                                 aria-describedby="emailHelp" placeholder="Enter Last Name" name="lastname" required>
 
@@ -88,13 +90,13 @@ if (isset($_SESSION['user_id'])) {
                 <div class="form-group">
                     <label for="password">Password</label>
                     <input type="password" class="form-control form-control-sm" id="password" placeholder="Password"
-                        name="password" required>
+                        name="password" required="required">
 
                 </div>
                 <div class="form-group">
                     <label for="confirmPassword">Password Confirm</label>
                     <input type="password" class="form-control form-control-sm" id="confirmPassword"
-                        placeholder="assword" name="Password confirmation" required>
+                        placeholder="assword" name="Password confirmation" required="required">
 
                 </div>
                 <button id="submitReg" type="submit" class="btn btn-success d-flex mx-auto "

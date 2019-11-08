@@ -11,18 +11,19 @@ Author: neltechsolutions254
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
     <script>
-        addEventListener("load", function() {
-            setTimeout(hideURLbar, 0);
-        }, false);
+        // addEventListener("load", function() {
+        //     setTimeout(hideURLbar, 0);
+        // }, false);
 
-        function hideURLbar() {
-            window.scrollTo(0, 1);
-        }
+        // function hideURLbar() {
+        //     window.scrollTo(0, 1); FIXME: TO UNHIDE THE TEXT
+        // }
     </script>
     <!-- //Meta tag Keywords -->
     <!-- Custom-Files -->
     <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- Bootstrap-Core-CSS -->
     <link rel="stylesheet" href="css/style.css" type="text/css" media="all" />
     <!-- Style-CSS -->
@@ -338,43 +339,56 @@ Author: neltechsolutions254
     </section>
     <!--//counter-->
     <!--book with us now-->
-    <section class="book py-5" id="book">
+    <section class=" py-5">
         <div class="container">
             <div class="row">
-                <div class="about-grids">
-                    <div class="text-center">
-                        <h3>Book Our Services Online </h3>
-                        <div class="abt-form text-center">
-                            <form action="#" method="post">
-                                <div class="col-4 col-sm-4 col-xs-4 w3ls-lt-form">
-                                    <div>
-                                        <input type="text" name="location" placeholder="Location(Brief description)"
-                                            required="required">
-                                        <input type="text" name="cname" placeholder="Your Name" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-4 col-sm-4 col-xs-4 w3ls-lt-form">
-                                    <div class="w3ls-pr">
-                                        <input type="date" name="date" required="required">
-                                        <input type="tel" name="phone no" placeholder="Phone no" required="required">
-                                    </div>
-                                </div>
-                                <div class="col-4 col-sm-4 col-xs-4 w3ls-lt-form">
-                                    <div class="w3ls-pr">
-                                        <textarea type="text" name="details"
-                                            placeholder="Event Description(tent,chairs e.t.c)"
-                                            required="required"></textarea>
-                                        <input type="email" name="email" placeholder="Email" required="required">
-                                    </div>
-                                </div>
-                                <div class="clearfix"></div>
-                                <input type="submit" value="Book Now">
-
-                            </form>
-                        </div>
-                    </div>
+                <div class="col-sm ml-2">
+                <h3>Book Our Services Online</h3>
                 </div>
             </div>
+
+            <form>
+                    <div id="book" class="row " style="margin-right: 0px; margin-left: 0px;">
+                        <div class="col-sm ">
+                            <label for="formGroupExampleInput">Location</label>
+                            <input type="text" class="form-control" id="Location(Brief description)"
+                                placeholder="Example input">
+                        </div>
+                        <div class="col-sm">
+                            <label for="formGroupExampleInput2">Your Name</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                                placeholder="Your Name" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="formGroupExampleInput2">Phone No</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                                placeholder="Phone no" required>
+                        </div>
+                    </div>
+                    <div id="book" class="row " style="margin-right: 0px; margin-left: 0px;">
+                        <div class="col-sm ">
+                            <label for="formGroupExampleInput">Email</label>
+                            <input type="email" class="form-control" id="formGroupExampleInput"
+                                placeholder="example@gmail.com" required>
+                        </div>
+                        <div class="col-sm">
+                            <label for="formGroupExampleInput2">Another label</label>
+                            <input type="date" class="form-control" id="formGroupExampleInput2"
+                                placeholder="Another input">
+                        </div>
+                        <div class="col-sm">
+                            <label for="formGroupExampleInput2">Event Descrition</label>
+                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-sm ml-3 mt-1" style="">
+                        <button type="SUBMIT" class="btn  btn-outline-dark">SUBMIT</button>
+                        </div>
+                    </div>
+            </form>
+
         </div>
     </section>
     <!--end of book with us-->

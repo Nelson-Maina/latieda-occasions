@@ -851,9 +851,13 @@ ul.list-unstyled.w3ls-icons.clients li span:hover {
 
 /*--booking*/
 #book{
-    min-height:50vh;
-    width: 100%;
+    flex-wrap: wrap;
+    margin-right: 0;
+     margin-left: 0;
+     justify-content: center;
 }
+
+
 .about-grids {
 	margin-top: 4em;
 	background: #effbfb;

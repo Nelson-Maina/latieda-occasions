@@ -343,7 +343,7 @@ Author: neltechsolutions254
         <div class="container">
             <div class="row">
                 <div class="col-sm ml-2">
-                <h3>Book Our Services Online</h3>
+                <h3 class="pb-5 mb-3">Book Our Services Online</h3>
                 </div>
             </div>
 
@@ -372,7 +372,7 @@ Author: neltechsolutions254
                                 placeholder="example@gmail.com" required>
                         </div>
                         <div class="col-sm">
-                            <label for="formGroupExampleInput2">Another label</label>
+                            <label for="formGroupExampleInput2">Date of your Event</label>
                             <input type="date" class="form-control" id="formGroupExampleInput2"
                                 placeholder="Another input">
                         </div>
@@ -435,9 +435,7 @@ Author: neltechsolutions254
                     </ul>
                 </div>
                 <div class="col-md-6 test-info-w3ls text-left">
-                    <p><span class="fa fa-quote-left"></span> Lorem Ipsum has been the industry's standard since the
-                        1500s. Praesent ullamcorper dui turpis.Nulla pellentesque mi non laoreet eleifend. Integer
-                        porttitor mollisar lorem, at molestie arcu pulvinar ut. <span class="fa fa-quote-right"></span>
+                    <p><span class="fa fa-quote-left"></span>Thanks again for another great event! Everything looked beautiful, the props were great, and you are all so positive, accommodating and easy to work with. It really makes my life so much easier. Your staff was timely, efficient, friendly and extremely helpful. <span class="fa fa-quote-right"></span>
                     </p>
 
                     <div class="test-img text-left mb-3">
@@ -527,8 +525,8 @@ Author: neltechsolutions254
                                 </div>
                                 <div class="col-9 text-left">
                                     <h6>Location</h6>
-                                    <p>The company name
-                                        <br>New York City. </p>
+                                    <p>Latieda Occassions
+                                        <br>Mombasa County Kenya</p>
                                 </div>
                             </div>
                         </div>
@@ -540,7 +538,7 @@ Author: neltechsolutions254
                                 </div>
                                 <div class="col-9 text-left">
                                     <h6>Email</h6>
-                                    <a href="mailto:info@example.com">mail@example.com</a>
+                                    <a href="latiedaOccassions@gmail.com">latiedaoccassions.com</a>
                                     <br>
                                     <a href="mailto:info@example.com">mail2@example.com</a>
                                 </div>
@@ -553,8 +551,8 @@ Author: neltechsolutions254
                                 </div>
                                 <div class="col-9 text-left">
                                     <h6>Phone Number</h6>
-                                    <p>+ 254741830836</p>
-                                    <p>+ 0987654321</p>
+                                    <p>+ 254723827021</p>
+                                    <p>+254741830836</p>
                                 </div>
                             </div>
                         </div>
@@ -583,12 +581,10 @@ Author: neltechsolutions254
                                 Latieda Occassions
                             </a>
                         </h2>
-                        <p class="my-3">Donec consequat sam libero tempore, cum soluta nobis est eligendi optio cumque
-                            nihil impedit quo minus</p>
-                        <p>
-                            Id quod possimusapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at, semper
-                            varius orci.
-                        </p>
+                        <p class="my-3">Latieda events company provides top of range services to its clients.As a result,we have recieved
+                        top ratings as the best event provider in mombasa.</p>
+                        <p>Please take a moment and give us your feedback on the section above</p>
+                      
                     </div>
                     <div class="col-lg-2 col-md-6 mt-md-0 mt-5">
                         <div class="footer-w3pvt">
@@ -662,15 +658,15 @@ Author: neltechsolutions254
                             <hr>
                             <div class="last-w3ls-contact">
                                 <p>
-                                    <a href="mailto:example@email.com">info@example.com</a>
+                                    <a href="neltechsolutions254@.com">latiedaoccassions@gmail.com</a>
                                 </p>
                             </div>
                             <div class="last-w3ls-contact my-2">
-                                <p>0723827021</p>
+                                <p>+254723827021</p>
                             </div>
                             <div class="last-w3ls-contact">
-                                <p>+ 52 Donec consequat,
-                                    <br>523 Loem Ipsum 049436.</p>
+                                <p>shanzu
+                                    <br>off mombasa malindi highway</p>
                             </div>
                         </div>
                     </div>

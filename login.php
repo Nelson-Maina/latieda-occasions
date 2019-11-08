@@ -26,6 +26,9 @@ if (isset($_SESSION['user_id'])) {
     <link rel="stylesheet" href="css/bootstrap.css">
     <!-- main.css -->
     <link rel="stylesheet" href="css/admin.css">
+
+    <link rel="stylesheet" href="css/format.css">
+
     <!-- //Google recaptcha form -->
     <script
         src="https://www.google.com/recaptcha/api.js?render=<?php echo SITE_KEY; ?>">

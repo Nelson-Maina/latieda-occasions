@@ -347,12 +347,12 @@ Author: neltechsolutions254
                 </div>
             </div>
 
-            <form>
+            <form action="includes/book.inc.php" method="post">
                     <div id="book" class="row " style="margin-right: 0px; margin-left: 0px;">
                         <div class="col-sm ">
                             <label for="formGroupExampleInput">Location</label>
-                            <input type="text" class="form-control" id="Location(Brief description)"
-                                placeholder="Example input">
+                            <input type="text" class="form-control" 
+                                placeholder="Location(Brief description)">
                         </div>
                         <div class="col-sm">
                             <label for="formGroupExampleInput2">Your Name</label>
@@ -384,7 +384,7 @@ Author: neltechsolutions254
                     </div>
                     <div class="row">
                         <div class="col-sm ml-3 mt-1" style="">
-                        <button type="SUBMIT" class="btn  btn-outline-dark">SUBMIT</button>
+                        <button type="SUBMIT" name="book" class="btn  btn-outline-dark">SUBMIT</button>
                         </div>
                     </div>
             </form>

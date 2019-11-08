@@ -6,7 +6,7 @@ body{
     -ms-background-size: cover;
     background-size: cover;
     position: relative;
-    min-height: 100vh;
+    max-height: 100vh;
     color:white;
 }
 form{

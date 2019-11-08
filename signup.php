@@ -99,7 +99,7 @@ if (isset($_SESSION['user_id'])) {
                         placeholder="assword" name="Password confirmation" required="required">
 
                 </div>
-                <button id="submitReg" type="submit" class="btn btn-success d-flex mx-auto "
+                <button id="submitReg" type="submit" class="btn btn-warning d-flex mx-auto "
                     name="signup-submit">Register</button>
                 <p class="text-center">Already Registered? <a href="login.php" class="text-white">Log-In Here </a></p>
 

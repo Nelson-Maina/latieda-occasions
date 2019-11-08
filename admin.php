@@ -105,16 +105,14 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <span><i class="fas fa-plus-circle"></i></span> Add Past Event</button>
                 </div>
             </div>
-
-
-
             <div class="row">
                 <!-- Event Requests -->
                 <div class="col-12">
                     <?php
                     require 'includes\functions.php';
 
-                    $events = getPastEvent();
+                    // $events = getPastEvent();
+                    $books = getbookrequest($id)
                  
                 ?>
 
@@ -137,7 +135,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             </tr>
                         </thead>
                         <tbody>
+<?php
 
+?>
                             <tr>
                                 <th scope="row">1</th>
                                 <td>Mark</td>

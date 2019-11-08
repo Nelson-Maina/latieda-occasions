@@ -351,34 +351,34 @@ Author: neltechsolutions254
                     <div id="book" class="row " style="margin-right: 0px; margin-left: 0px;">
                         <div class="col-sm ">
                             <label for="formGroupExampleInput">Location</label>
-                            <input type="text" class="form-control" 
-                                placeholder="Location(Brief description)">
+                            <input type="text" class="form-control" name="location" 
+                                placeholder="Location(Brief description)"  required>
                         </div>
                         <div class="col-sm">
                             <label for="formGroupExampleInput2">Your Name</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                            <input type="text" class="form-control" id="formGroupExampleInput2" name="name"
                                 placeholder="Your Name" required>
                         </div>
                         <div class="col-sm">
                             <label for="formGroupExampleInput2">Phone No</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput2"
+                            <input type="text" class="form-control" id="formGroupExampleInput2" name="phone"
                                 placeholder="Phone no" required>
                         </div>
                     </div>
                     <div id="book" class="row " style="margin-right: 0px; margin-left: 0px;">
                         <div class="col-sm ">
                             <label for="formGroupExampleInput">Email</label>
-                            <input type="email" class="form-control" id="formGroupExampleInput"
+                            <input type="email" class="form-control" id="formGroupExampleInput" name="email"
                                 placeholder="example@gmail.com" required>
                         </div>
                         <div class="col-sm">
                             <label for="formGroupExampleInput2">Date of your Event</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput2"
-                                placeholder="Another input">
+                            <input type="date" class="form-control" id="formGroupExampleInput2" name="date"
+                                placeholder="Another input" required>
                         </div>
                         <div class="col-sm">
                             <label for="formGroupExampleInput2">Event Descrition</label>
-                            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                            <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3" required></textarea> 
                         </div>
 
                     </div>

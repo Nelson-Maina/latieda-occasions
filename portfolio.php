@@ -86,7 +86,7 @@ require 'includes/init.php';
                                     Read More</a>
                             </div>
                         </div>
-                        <div class="card-header p-0" style="overflow:hidden">
+                        <div class="card-header p-0" style="    max-height: 30vh;overflow-y: hidden; display: flex; justify-content: center;align-items: center;">
                             <a href="single.html">
                                 <img class="card-img-bottom"
                                     src="images\pasteventimages\<?php echo $event['img_name']; ?> ">

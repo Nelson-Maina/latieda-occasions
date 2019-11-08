@@ -11,7 +11,7 @@
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
                     <ul class="menu mt-2 ml-auto">
-                        <li class="active"><a href="index.html">Home</a></li>
+                        <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="#about" class="scroll">About</a></li>
                         <li><a href="portfolio.php" class="scroll">Portfolio</a></li>
                         <li><a href="#blog" class="scroll">Blog</a></li>

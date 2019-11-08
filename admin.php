@@ -186,7 +186,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                             <tr>
                                 <th scope="row"><?php  echo $i?>
                                 </th>
-                                <td><?php  echo $event['past_event_title']; ?>
+                                <td><?php  echo $event['past_event_img']; ?>
                                 </td>
                                 <td><?php  echo $event['past_event_desc']; ?>
                                 </td>

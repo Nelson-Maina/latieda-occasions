@@ -44,36 +44,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- mian-content -->
     <div class="main-content page-inner" id="home">
         <!-- header -->
-        <header>
-            <div class="container-fluid px-lg-5">
-                <!-- nav -->
-                <nav class="py-4 d-lg-flex">
-                    <div id="logo">
-                        <h1> <a href="index.html"> Lateida Ocassions</a></h1>
-                    </div>
-                    <label for="drop" class="toggle">Menu</label>
-                    <input type="checkbox" id="drop" />
-                    <ul class="menu mt-2 ml-auto">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li><a href="index.html">About</a></li>
-                        <li><a href="index.html">Blog</a></li>
-                        <li>
-                            <!-- First Tier Drop Down -->
-                            <label for="drop-2" class="toggle">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span> </label>
-                            <a href="#">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span></a>
-                            <input type="checkbox" id="drop-2" />
-                            <ul class="inner-ul">
-                                <li><a href="index.html">Gallery</a></li>
-                                <li><a href="index.html">Plans</a></li>
-                                <li><a href="index.html">Blog</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="index.html" >Contact</a></li>
-                    </ul>
-                </nav>
-                <!-- //nav -->
-            </div>
-        </header>
+        <?php require 'includes/header.php'  ?>
         <!-- //header -->
 
         <!-- //banner -->

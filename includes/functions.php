@@ -17,7 +17,7 @@ function compress($source, $destination, $quality)
 
 function getPastEvent()
 {
-    $sql = "SELECT past_event_id,past_event_title,past_event_desc,img_name  from past_events 
+    $sql = "SELECT past_event_id,past_event_title,past_event_desc,img_name,past_event_img  from past_events 
     inner join images 
     on past_events_past_event_id = past_event_id;";
 

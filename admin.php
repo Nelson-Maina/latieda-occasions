@@ -6,13 +6,6 @@ if ($_SESSION['user_type'] !== "admin") {
 }
 ?>
 
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -21,8 +14,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     <!-- Meta tag Keywords -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
-    <meta name="keywords"
-        content="Mechanized Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    
+
     <script>
         addEventListener("load", function() {
             setTimeout(hideURLbar, 0);
@@ -62,7 +55,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <!-- nav -->
                 <nav class="py-4 d-lg-flex">
                     <div id="logo">
-                        <h1> <a href="index.html"> Mechanized</a></h1>
+                        <h1> <a href="index.html"> Latieda Occassions</a></h1>
                     </div>
                     <label for="drop" class="toggle">Menu</label>
                     <input type="checkbox" id="drop" />
@@ -112,46 +105,51 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                     require 'includes\functions.php';
 
                     // $events = getPastEvent();
-                    $books = getbookrequest($id)
+                    $books = getbookrequest();
+    
                  
                 ?>
 
-                    <h6 class="text-center ">Resent Requests</h6>
+                    <h6 class="text-center ">Recent Requests</h6>
                 </div>
                 <div class="col-12 " style="overflow: scroll;">
                     <table class="table table-sm table-striped table-bordered">
                         <thead>
                             <tr>
                                 <th scope="col" style="width: 10px;">No</th>
-                                <th scope="col">Name</th>
+                              
                                 <th scope="col">Date</th>
                                 <th scope="col">Location</th>
                                 <th scope="col">Description</th>
                                 <th scope="col">Phone</th>
                                 <th scope="col">Email</th>
                                 <th scope="col">Requests Date</th>
-                                <th scope="col" style="width: 1%;">View</th>
+
                                 <th scope="col" style="width: 1%;">Delete</th>
                             </tr>
                         </thead>
                         <tbody>
-<?php
-
+                            <?php
+ foreach ($books as $book):
+   
 ?>
                             <tr>
+                       
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td><button class="btn btn-success btn-sm">View</button></td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                                <td><?php echo $book['event_book_date']  ?></td>
+                                <td><?php echo $book['event_book_location']  ?></td>
+                                <td><?php echo $book['event_book_desc']  ?></td>
+                                <td><?php echo $book['phone_no']  ?></td>
+                                <td><?php echo $book['email']  ?></td>
+                                <td><?php echo $book['request_date']  ?></td>
+                                <td> <a
+                                        href="admin.php?idup=<?php  echo $book['event_booking_id']; ?>"><button
+                                            class="btn btn-success btn-sm">View</button data-toggle="event_booking_id"
+                                            onclick="reply_click(this.id)" data-target=".bd-example-modal-sm"></td>
 
 
                             </tr>
+<?php endforeach ?>
 
                     </table>
                 </div>
@@ -208,6 +206,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <div class="col-12 mt-5">
                     <h6 class="text-center ">Feedback</h6>
                 </div>
+                <?php
+                    // $events = getPastEvent();
+                    $feeds = getfeed();  
+                 
+                ?>
                 <div class="col-12 " style="overflow: scroll;">
                     <table class="table table-sm table-striped table-bordered">
                         <thead>
@@ -217,19 +220,21 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                                 <th scope="col">Email</th>
                                 <th scope="col">Comment</th>
                                 <th scope="col" style="width: 1%;">View</th>
-                                <th scope="col" style="width: 1%;">Delete</th>
+                                
 
                             </tr>
                         </thead>
                         <tbody>
+                        <?php foreach ($feeds as $feed):  ?>
                             <tr>
                                 <th scope="row">1</th>
-                                <td>Mark</td>
-                                <td>Mark</td>
-                                <td>Mark</td>
+                                <td><?php  echo $feed['feed_name']; ?></td>
+                                <td><?php  echo $feed['feed_email']; ?></td>
+                                <td><?php  echo $feed['feed_message']; ?></td>
                                 <td><button class="btn btn-success btn-sm">View</button></td>
-                                <td><button class="btn btn-danger btn-sm">Delete</button></td>
+                            
                             </tr>
+                            <?php endforeach  ?>
 
                     </table>
                 </div>
@@ -242,144 +247,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
     </section>
     <!-- //banner-bottom-wthree -->
     <!-- footer -->
-    <footer class="footer-content">
-        <div class="layer footer">
-            <div class="container-fluid">
-                <div class="row footer-top-inner-w3ls">
-                    <div class="col-lg-4 col-md-6 footer-top mt-md-0 mt-sm-5">
-                        <h2>
-                            <a class="navbar-brand" href="index.html">
-                                Mechanized
-                            </a>
-                        </h2>
-                        <p class="my-3">Donec consequat sam libero tempore, cum soluta nobis est eligendi optio cumque
-                            nihil impedit quo minus</p>
-                        <p>
-                            Id quod possimusapien ut leo cursus rhoncus. Nullam dui mi, vulputate ac metus at, semper
-                            varius orci.
-                        </p>
-                    </div>
-                    <div class="col-lg-2 col-md-6 mt-md-0 mt-5">
-                        <div class="footer-w3pvt">
-                            <h3 class="mb-3 w3pvt_title">Navigation</h3>
-                            <hr>
-                            <ul class="list-info-w3pvt">
-                                <li>
-                                    <a href="index.html" class="scroll">
-                                        Home
-                                    </a>
-                                </li>
-                                <li class="my-2">
-                                    <a href="index.html" class="scroll">
-                                        About Us
-                                    </a>
-                                </li>
-                                <li class="my-2">
-                                    <a href="index.html" class="scroll">
-                                        Gallery
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="index.html" class="scroll">
-                                        Services
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.html" class="scroll">
-                                        Contact Us
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
-                        <div class="footer-w3pvt">
-                            <h3 class="mb-3 w3pvt_title">Links</h3>
-                            <hr>
-                            <ul class="list-info-w3pvt">
-                                <li>
-                                    <a href="#about" class="scroll">
-                                        Our Mission
-                                    </a>
-                                </li>
-                                <li class="my-2">
-                                    <a href="#blog" class="scroll">
-                                        Latest Posts
-                                    </a>
-                                </li>
-                                <li class="my-2">
-                                    <a href="#">
-                                        Explore
-                                    </a>
-                                </li>
-                                <li class="mb-2">
-                                    <a href="#contact" class="scroll">
-                                        Find us
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="index.html">
-                                        Privacy Policy
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-6 mt-lg-0 mt-5">
-                        <div class="footer-w3pvt">
-                            <h3 class="mb-3 w3pvt_title">Contact Us</h3>
-                            <hr>
-                            <div class="last-w3ls-contact">
-                                <p>
-                                    <a href="mailto:example@email.com">info@example.com</a>
-                                </p>
-                            </div>
-                            <div class="last-w3ls-contact my-2">
-                                <p>+ 456 123 7890</p>
-                            </div>
-                            <div class="last-w3ls-contact">
-                                <p>+ 52 Donec consequat,
-                                    <br>523 Loem Ipsum 049436.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-                <p class="copy-right-grids text-li text-center my-sm-4 my-4">© 2019 Mechanized. All Rights Reserved |
-                    Design by
-                    <a href="http://w3layouts.com/"> W3layouts </a>
-                </p>
-                <div class="w3ls-footer text-center mt-4">
-                    <ul class="list-unstyled w3ls-icons">
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-facebook-f"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-twitter"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-dribbble"></span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="fa fa-vk"></span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-                <div class="move-top text-right"><a href="#home" class="move-top"> <span class="fa fa-angle-up  mb-3"
-                            aria-hidden="true"></span></a></div>
-            </div>
-            <!-- //footer bottom -->
-        </div>
-    </footer>
+    <?php  require 'includes\footer.inc.php';   ?>
     <!-- //footer -->
 
     <!--new past event modal -->
@@ -444,27 +312,27 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 <script src="ckeditor/ckeditor.js"></script>
                 <?php  if (isset($_GET['id'])): ?>
                 <?php
-                    $urlID= $_GET['id'];
-                    $eventData = getUpcomingEvents1($urlID);
+                        $urlID= $_GET['id'];
+                        $eventData = getUpcomingEvents1($urlID);
 
-                   
+                  
             ?>
 
                 <div class="modal-body py-0 px-1">
                     <img src="images/pasteventimages/<?php echo $eventData [0]['img_name']; ?>"
                         class="img-fluid img-thumbnail" alt="">
                     <!-- //form to create a new post -->
-              
 
-                        <div class="col">
-                            <span class="font-weight-bolder d-inline">TITLE: </span><?php echo $eventData[0]['past_event_title']; ?>
-                        </div>
-                       
-                        <!-- //id if the person who posted the article -->
 
-                        <div class="col card mb-2">
-                            <?php echo $eventData[0]['past_event_desc']; ?>
-                        </div>
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">TITLE: </span><?php echo $eventData[0]['past_event_title']; ?>
+                    </div>
+
+                    <!-- //id if the person who posted the article -->
+
+                    <div class="col card mb-2">
+                        <?php echo $eventData[0]['past_event_desc']; ?>
+                    </div>
 
 
                     </form>
@@ -472,9 +340,76 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                 </div>
                 <div class="modal-footer p-1" style="background-color:  #f6dffa;">
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
-                    <a href="includes/delete.inc.php?event=<?php echo $eventData[0]['past_event_id']; ?>" class="btn btn-danger btn-sm">Delete</a>
-      
-                   
+                    <a href="includes/delete.inc.php?event=<?php echo $eventData[0]['past_event_id']; ?>"
+                        class="btn btn-danger btn-sm">Delete</a>
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+      <!--amin view book Requests Modal -->
+
+      <div class="modal fade" id="viewevent" tabindex="-1" role="dialog" aria-labelledby="RegNewMemberModal"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable" role="document">
+            <div class="modal-content">
+                <div class="modal-header p-1 " style="background-color:  #f6dffa;">
+                    <h5 class="modal-title text-center" id="exampleModalScrollableTitle">Book Request</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- //require the ck editor -->
+                <script src="ckeditor/ckeditor.js"></script>
+                <?php  if (isset($_GET['idup'])): ?>
+                <?php
+                    $urlID= $_GET['idup'];
+                    $eventData = getbookrequest1($urlID);
+
+
+    
+            ?>
+
+                <div class="modal-body py-0 px-1">
+                 
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">Client Name: </span><?php echo $eventData[0]['name']; ?>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">Client Phone: </span><?php echo $eventData[0]['phone_no']; ?>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">Client Email: </span><?php echo $eventData[0]['email']; ?>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">Event Date: </span><?php echo $eventData[0]['event_book_date']; ?>
+                    </div>
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">Book Date: </span><?php echo $eventData[0]['request_date']; ?>
+                    </div>
+
+                    <!-- //id if the person who posted the article -->
+                    <div class="col">
+                        <span class="font-weight-bolder d-inline">Event Description: </span>
+                    </div>
+
+                    <div class="col card mb-2">
+                        <?php echo $eventData[0]['event_book_desc']; ?>
+                    </div>
+
+
+                    </form>
+                    <?php endif ?>
+                </div>
+                <div class="modal-footer p-1" style="background-color:  #f6dffa;">
+                    <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close</button>
+                    <a href="includes/delete.inc.php?book=<?php echo $eventData[0]['event_booking_id']; ?>"
+                        class="btn btn-danger btn-sm">Delete</a>
+
+
 
                 </div>
             </div>
@@ -527,6 +462,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 if (isset($_GET['id'])) {
     echo '<script>
         $("#editpost").modal();
+    
+    </script>';
+}
+
+if (isset($_GET['idup'])) {
+    echo '<script>
+        $("#viewevent").modal();
     
     </script>';
 }

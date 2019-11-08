@@ -51,9 +51,25 @@ function getUpcomingEvents1($id)
     }
 }
 
-function getbookrequest($id)
+function getbookrequest()
 {
     $sql = "SELECT * from event_book;";
+    $obj = new DATABASE();
+    $data = $obj->queryNone($sql);
+    
+    return $data;
+}
+function getbookrequest1($id)
+{
+    $sql = "SELECT * from event_book WHERE event_booking_id = $id;";
+    $obj = new DATABASE();
+    $data = $obj->queryNone($sql);
+    
+    return $data;
+}
+function getfeed()
+{
+    $sql = "SELECT * from feedback;";
     $obj = new DATABASE();
     $data = $obj->queryNone($sql);
     
